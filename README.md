@@ -2,6 +2,8 @@
 
 ### 🚀 **[View Live Demo: High-Security Authentication](https://identity-verification-system.netlify.app/)**
 
+![Access Control Interface](face_recognition_ui.png)
+
 An enterprise-ready, browser-based facial authentication and identity management system.
 
 ## 🎯 The Purpose: Privacy-First Security
