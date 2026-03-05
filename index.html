@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Identity Verification System V9.2 [ENTERPRISE STABLE]</title>
-    
+
     <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <!-- EXTERNAL LIBRARIES -->
     <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
 
@@ -25,16 +28,16 @@
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            
+
             /* RADII */
             --radius-sm: 0.375rem;
             --radius-md: 0.5rem;
             --radius-lg: 0.75rem;
-            
+
             /* STATE COLORS (Immutable) */
-            --color-primary: #3b82f6; 
-            --color-success: #10b981; 
-            --color-warning: #f59e0b; 
+            --color-primary: #3b82f6;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
             --color-danger: #ef4444;
             --color-info: #0ea5e9;
         }
@@ -43,7 +46,7 @@
          * MODULE: THEME DEFINITIONS
          * ==========================================================================
          */
-        
+
         /* LIGHT THEME CONFIGURATION */
         [data-theme="light"] {
             --bg-app: #f8fafc;
@@ -51,38 +54,46 @@
             --bg-header: #ffffff;
             --bg-input: #f1f5f9;
             --bg-hover: #f1f5f9;
-            
+
             --text-main: #0f172a;
             --text-muted: #64748b;
             --text-inverted: #ffffff;
-            
+
             --border-subtle: #e2e8f0;
             --border-focus: #cbd5e1;
-            
+
             --track-color: #e2e8f0;
             --scroll-thumb: #cbd5e1;
-            
+
             --header-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
         }
 
         /* DARK THEME CONFIGURATION */
         [data-theme="dark"] {
-            --bg-app: #0b0c15;       /* Deepest Navy */
-            --bg-panel: #161822;     /* Panel Background */
-            --bg-header: #12141c;    /* Header Background */
-            --bg-input: #1f2233;     /* Input Fields */
-            --bg-hover: #2a2d3e;     /* Hover State */
-            
-            --text-main: #e2e8f0;    /* Primary Text */
-            --text-muted: #94a3b8;   /* Secondary Text */
+            --bg-app: #0b0c15;
+            /* Deepest Navy */
+            --bg-panel: #161822;
+            /* Panel Background */
+            --bg-header: #12141c;
+            /* Header Background */
+            --bg-input: #1f2233;
+            /* Input Fields */
+            --bg-hover: #2a2d3e;
+            /* Hover State */
+
+            --text-main: #e2e8f0;
+            /* Primary Text */
+            --text-muted: #94a3b8;
+            /* Secondary Text */
             --text-inverted: #0f172a;
-            
-            --border-subtle: #2d3748; /* Borders */
+
+            --border-subtle: #2d3748;
+            /* Borders */
             --border-focus: #4b5563;
-            
+
             --track-color: #1f2937;
             --scroll-thumb: #374151;
-            
+
             --header-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05);
         }
 
@@ -110,10 +121,23 @@
         }
 
         /* SCROLLBARS */
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--scroll-thumb);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
 
         /* * ==========================================================================
          * MODULE: HEADER COMPONENT
@@ -249,7 +273,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scaleX(-1); /* Mirror Mode */
+            transform: scaleX(-1);
+            /* Mirror Mode */
             opacity: 0.95;
         }
 
@@ -277,7 +302,10 @@
             z-index: 100;
             transition: opacity 0.1s ease-out;
         }
-        .flash-active { opacity: 0.9; }
+
+        .flash-active {
+            opacity: 0.9;
+        }
 
         .scan-line {
             position: absolute;
@@ -291,11 +319,25 @@
             pointer-events: none;
             z-index: 5;
         }
+
         .scan-active .scan-line {
             opacity: 0.6;
             animation: scanAnim 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
-        @keyframes scanAnim { 0% { top: 0%; } 50% { opacity: 0.8; } 100% { top: 100%; } }
+
+        @keyframes scanAnim {
+            0% {
+                top: 0%;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+
+            100% {
+                top: 100%;
+            }
+        }
 
         .alert-banner {
             position: absolute;
@@ -312,13 +354,16 @@
             display: none;
             z-index: 20;
             backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* SUCCESS OVERLAY */
         .success-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(16, 185, 129, 0.15);
             backdrop-filter: blur(5px);
             z-index: 50;
@@ -327,14 +372,16 @@
             align-items: center;
             justify-content: center;
         }
+
         .success-content {
-            background: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.8);
             padding: 40px;
             border-radius: 20px;
             text-align: center;
             border: 1px solid var(--color-success);
             box-shadow: 0 0 50px rgba(16, 185, 129, 0.2);
         }
+
         .countdown-number {
             font-size: 64px;
             font-weight: 800;
@@ -343,6 +390,7 @@
             line-height: 1;
             margin-bottom: 10px;
         }
+
         .success-label {
             font-size: 14px;
             color: #ffffff;
@@ -428,8 +476,16 @@
             padding-bottom: 4px;
         }
 
-        .info-label { color: var(--text-muted); font-weight: 500; }
-        .info-value { color: var(--text-main); font-weight: 600; font-family: var(--font-mono); }
+        .info-label {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: var(--text-main);
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
 
         /* CONFIDENCE METER */
         .meter-wrapper {
@@ -496,15 +552,25 @@
             color: white;
             box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
         }
-        .btn-primary:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-1px); }
-        .btn-primary:active:not(:disabled) { transform: translateY(0); }
+
+        .btn-primary:hover:not(:disabled) {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:active:not(:disabled) {
+            transform: translateY(0);
+        }
 
         .btn-danger {
             background-color: var(--color-danger);
             color: white;
             box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.2);
         }
-        .btn-danger:hover:not(:disabled) { filter: brightness(1.1); }
+
+        .btn-danger:hover:not(:disabled) {
+            filter: brightness(1.1);
+        }
 
         .btn-outline {
             background: transparent;
@@ -513,12 +579,17 @@
             width: auto;
             padding: 6px 12px;
         }
+
         .btn-outline:hover {
             border-color: var(--text-muted);
             background: var(--bg-hover);
         }
 
-        .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
 
         .form-input {
             width: 100%;
@@ -532,7 +603,10 @@
             margin-bottom: 12px;
             transition: border-color 0.2s;
         }
-        .form-input:focus { border-color: var(--color-primary); }
+
+        .form-input:focus {
+            border-color: var(--color-primary);
+        }
 
         /* DATABASE GALLERY */
         .gallery-grid {
@@ -554,10 +628,24 @@
             transition: all 0.2s;
             position: relative;
         }
-        
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: opacity 0.2s; }
-        .gallery-item:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-        .gallery-item:hover img { opacity: 1; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .gallery-item:hover img {
+            opacity: 1;
+        }
 
         /* SYSTEM LOG */
         .system-log {
@@ -570,10 +658,18 @@
             height: 100px;
             overflow-y: auto;
             border: 1px solid var(--border-subtle);
-            margin-top: auto; /* Push to bottom */
+            margin-top: auto;
+            /* Push to bottom */
         }
-        .log-entry { margin-bottom: 4px; }
-        .log-time { color: var(--color-primary); margin-right: 6px; }
+
+        .log-entry {
+            margin-bottom: 4px;
+        }
+
+        .log-time {
+            color: var(--color-primary);
+            margin-right: 6px;
+        }
 
         /* ADMIN PANEL */
         .admin-modal {
@@ -585,42 +681,94 @@
             margin-bottom: 16px;
             animation: slideDown 0.2s ease-out;
         }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         /* AUTH MODAL */
         .auth-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
-            z-index: 200; display: none;
-            align-items: center; justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
         }
+
         .auth-box {
-            background: var(--bg-panel); border: 1px solid var(--color-primary);
-            padding: 24px; border-radius: var(--radius-md);
-            width: 300px; text-align: center;
+            background: var(--bg-panel);
+            border: 1px solid var(--color-primary);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            width: 300px;
+            text-align: center;
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
         }
+
         .auth-title {
-            color: var(--color-primary); font-weight: 800; letter-spacing: 1px;
-            margin-bottom: 16px; font-size: 14px;
+            color: var(--color-primary);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-size: 14px;
         }
+
         .auth-input {
-            width: 100%; background: #000; border: 1px solid var(--border-subtle);
-            color: white; padding: 12px; text-align: center;
-            font-family: var(--font-mono); font-size: 18px; letter-spacing: 4px;
-            margin-bottom: 16px; outline: none;
+            width: 100%;
+            background: #000;
+            border: 1px solid var(--border-subtle);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 18px;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            outline: none;
         }
-        .auth-input:focus { border-color: var(--color-primary); }
-        .auth-actions { display: flex; gap: 12px; }
+
+        .auth-input:focus {
+            border-color: var(--color-primary);
+        }
+
+        .auth-actions {
+            display: flex;
+            gap: 12px;
+        }
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .app-layout { grid-template-columns: 1fr; height: auto; overflow-y: auto; }
-            .viewport-container { height: 500px; }
-            body { overflow-y: auto; }
+            .app-layout {
+                grid-template-columns: 1fr;
+                height: auto;
+                overflow-y: auto;
+            }
+
+            .viewport-container {
+                height: 500px;
+            }
+
+            body {
+                overflow-y: auto;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- 
@@ -636,7 +784,7 @@
             </div>
             <div class="brand-subtitle">Enterprise Biometric Architecture</div>
         </div>
-        
+
         <div class="header-controls">
             <div class="status-indicator">
                 <div class="status-dot"></div>
@@ -654,45 +802,51 @@
       ========================================
     -->
     <main class="app-layout">
-        
+
         <!-- CAMERA VIEWPORT -->
         <div class="viewport-container" id="viewport">
             <video id="camera-feed" class="video-feed" autoplay playsinline muted></video>
             <canvas id="hud-overlay" class="hud-canvas"></canvas>
-            
+
             <!-- Dynamic Elements -->
             <div id="scan-line" class="scan-line"></div>
             <div id="flash-effect" class="flash-overlay"></div>
             <div id="alert-banner" class="alert-banner">⚠ LOW LIGHT DETECTED</div>
-            
+
             <!-- Success Overlay -->
             <div id="success-overlay" class="success-overlay">
                 <div class="success-content">
                     <div class="countdown-number" id="countdown-val">10</div>
                     <div class="success-label">TARGET CONFIRMED</div>
-                    <div class="success-label" style="font-size:12px; opacity:0.7; margin-top:5px;">ARCHIVING RECORD...</div>
+                    <div class="success-label" style="font-size:12px; opacity:0.7; margin-top:5px;">ARCHIVING RECORD...
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- SIDEBAR CONTROLS -->
         <aside class="sidebar-container">
-            
+
             <!-- PANEL: TARGET PROFILE -->
             <div class="panel">
                 <div class="panel-header">
                     <span class="panel-title">Active Target</span>
                     <span style="font-size: 11px; color: var(--color-success); font-weight:600;">● MONITORING</span>
                 </div>
-                
+
                 <div class="target-profile">
                     <div class="profile-image-container">
-                        <img id="ui-target-img" class="profile-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Target">
+                        <img id="ui-target-img" class="profile-image"
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                            alt="Target">
                     </div>
                     <div class="profile-info">
-                        <div class="info-row"><span class="info-label">Identity</span><span class="info-value" id="ui-name">--</span></div>
-                        <div class="info-row"><span class="info-label">Rec Age</span><span class="info-value" id="ui-age">--</span></div>
-                        <div class="info-row"><span class="info-label">Location</span><span class="info-value" id="ui-loc">--</span></div>
+                        <div class="info-row"><span class="info-label">Identity</span><span class="info-value"
+                                id="ui-name">--</span></div>
+                        <div class="info-row"><span class="info-label">Rec Age</span><span class="info-value"
+                                id="ui-age">--</span></div>
+                        <div class="info-row"><span class="info-label">Location</span><span class="info-value"
+                                id="ui-loc">--</span></div>
                     </div>
                 </div>
 
@@ -737,7 +891,7 @@
 
         </aside>
     </main>
-    
+
     <!-- AUTH MODAL -->
     <div id="auth-modal" class="auth-overlay">
         <div class="auth-box">
@@ -755,762 +909,8 @@
       MODULE: JAVASCRIPT LOGIC 
       ========================================
     -->
-    <script>
-        /**
-         * ------------------------------------------------------------------
-         * [1] CONFIGURATION & CONSTANTS
-         * ------------------------------------------------------------------
-         */
-        const CONFIG = {
-            THEME: {
-                COLORS: {
-                    SCANNING: '#10b981', // Green
-                    VERIFYING: '#f59e0b', // Gold
-                    MATCH: '#3b82f6',    // Blue
-                    ALERT: '#ef4444'     // Red
-                }
-            },
-            AI: {
-                // Using 608px for Maximum Enterprise Fidelity
-                INPUT_SIZE: 608,
-                SCORE_THRESH: 0.5,
-                MODELS_URL: 'https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@0.22.2/weights'
-            },
-            LOGIC: {
-                MAX_FACES: 5,
-                // Strict Identification Thresholds
-                THRESH_MATCH_BASE: 0.45, 
-                THRESH_POSSIBLE: 0.60,
-                AGE_COMPENSATION: 0.015,
-                // Persistence: 10 frames = ~0.5s stability check
-                PERSISTENCE_REQUIRED: 10,
-                // Cooldowns
-                AUDIO_DEBOUNCE_MS: 3000,
-                // Throttling: 40ms = ~25 FPS max (prevents lag)
-                LOOP_DELAY_MS: 40
-            }
-        };
+    <script src="script.js"></script>
 
-        /**
-         * ------------------------------------------------------------------
-         * [2] SERVICE: LOGGER
-         * Simulates a system terminal for professional feedback.
-         * ------------------------------------------------------------------
-         */
-        class LoggerService {
-            constructor() {
-                this.container = document.getElementById('system-log');
-            }
-
-            log(message, type = 'info') {
-                const now = new Date();
-                const timeStr = `${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')}:${now.getSeconds().toString().padStart(2,'0')}`;
-                
-                const entry = document.createElement('div');
-                entry.className = 'log-entry';
-                entry.innerHTML = `<span class="log-time">[${timeStr}]</span> ${message}`;
-                
-                if (type === 'error') entry.style.color = 'var(--color-danger)';
-                if (type === 'success') entry.style.color = 'var(--color-success)';
-
-                this.container.appendChild(entry);
-                this.container.scrollTop = this.container.scrollHeight;
-            }
-        }
-
-        /**
-         * ------------------------------------------------------------------
-         * [3] SERVICE: DATABASE (IndexedDB)
-         * ------------------------------------------------------------------
-         */
-        class DatabaseService {
-            constructor(logger) {
-                this.logger = logger;
-                this.dbName = "PoliceDB_Ent_V9";
-                this.storeName = "records";
-                this.db = null;
-            }
-
-            async init() {
-                return new Promise((resolve, reject) => {
-                    const req = indexedDB.open(this.dbName, 1);
-                    
-                    req.onupgradeneeded = (e) => {
-                        const db = e.target.result;
-                        if (!db.objectStoreNames.contains(this.storeName)) {
-                            db.createObjectStore(this.storeName, { keyPath: "id", autoIncrement: true });
-                        }
-                    };
-
-                    req.onsuccess = (e) => {
-                        this.db = e.target.result;
-                        this.logger.log("Database Connection Established", "success");
-                        resolve(true);
-                    };
-
-                    req.onerror = (e) => {
-                        this.logger.log("Database Connection Failed", "error");
-                        reject(e);
-                    };
-                });
-            }
-
-            async addRecord(data) {
-                const tx = this.db.transaction([this.storeName], "readwrite");
-                tx.objectStore(this.storeName).add(data);
-                return new Promise(resolve => {
-                    tx.oncomplete = () => {
-                        this.logger.log(`Record Added: ${data.name}`, "success");
-                        resolve(true);
-                    }
-                });
-            }
-
-            async getAllRecords() {
-                const tx = this.db.transaction([this.storeName], "readonly");
-                const store = tx.objectStore(this.storeName);
-                return new Promise(resolve => {
-                    store.getAll().onsuccess = (e) => resolve(e.target.result);
-                });
-            }
-
-            async deleteRecord(id) {
-                const tx = this.db.transaction([this.storeName], "readwrite");
-                tx.objectStore(this.storeName).delete(id);
-                return new Promise(resolve => {
-                    tx.oncomplete = () => {
-                        this.logger.log(`Record ID ${id} Archived/Deleted`, "info");
-                        resolve(true);
-                    }
-                });
-            }
-        }
-
-        /**
-         * ------------------------------------------------------------------
-         * [4] SERVICE: BIOMETRIC ENGINE (AI)
-         * ------------------------------------------------------------------
-         */
-        class BiometricEngine {
-            constructor(logger) {
-                this.logger = logger;
-                this.options = new faceapi.TinyFaceDetectorOptions({
-                    inputSize: CONFIG.AI.INPUT_SIZE,
-                    scoreThreshold: CONFIG.AI.SCORE_THRESH
-                });
-                this.targetDescriptor = null; // Storing Raw Descriptor (V7 Logic)
-                this.targetName = "";
-                this.targetAge = 0; 
-                this.isLoaded = false;
-            }
-
-            async loadModels() {
-                try {
-                    this.logger.log("Initializing Neural Networks...");
-                    await Promise.all([
-                        faceapi.nets.tinyFaceDetector.loadFromUri(CONFIG.AI.MODELS_URL),
-                        faceapi.nets.faceLandmark68Net.loadFromUri(CONFIG.AI.MODELS_URL),
-                        faceapi.nets.faceRecognitionNet.loadFromUri(CONFIG.AI.MODELS_URL),
-                        faceapi.nets.ageGenderNet.loadFromUri(CONFIG.AI.MODELS_URL).catch(() => this.logger.log("AgeNet Optional Failed", "error"))
-                    ]);
-                    this.isLoaded = true;
-                    this.logger.log("AI Models Loaded Successfully", "success");
-                    return true;
-                } catch (e) {
-                    this.logger.log("Critical AI Load Failure", "error");
-                    console.error(e);
-                    return false;
-                }
-            }
-
-            async setTarget(imageElement, name, age) {
-                this.logger.log(`Vectorizing Target: ${name}...`);
-                const detections = await faceapi.detectSingleFace(imageElement, this.options)
-                    .withFaceLandmarks()
-                    .withFaceDescriptor();
-
-                if (detections) {
-                    // DIRECT DESCRIPTOR STORAGE (No FaceMatcher Black Box)
-                    this.targetDescriptor = detections.descriptor;
-                    this.targetName = name;
-                    this.targetAge = parseInt(age) || 30; 
-                    this.logger.log("Target Vector Locked. Ready.", "success");
-                    return true;
-                } else {
-                    this.logger.log("Failed to Extract Face Vector", "error");
-                    return false;
-                }
-            }
-
-            async scanFrame(videoElement) {
-                if (!this.isLoaded) return [];
-                // Detect All Faces
-                return await faceapi.detectAllFaces(videoElement, this.options)
-                    .withFaceLandmarks()
-                    .withFaceDescriptors()
-                    .withAgeAndGender();
-            }
-
-            // RAW EUCLIDEAN DISTANCE (V7 Logic)
-            getMatchScore(descriptor) {
-                if (!this.targetDescriptor) return 1.0; // Max distance
-                return faceapi.euclideanDistance(this.targetDescriptor, descriptor);
-            }
-
-            // Adaptive Threshold Logic
-            getAdaptiveThreshold(detectedAge) {
-                let threshold = CONFIG.LOGIC.THRESH_MATCH_BASE;
-                if (detectedAge && this.targetAge) {
-                    const diff = Math.abs(detectedAge - this.targetAge);
-                    // Relax threshold by factor per year difference
-                    threshold += (diff * CONFIG.LOGIC.AGE_COMPENSATION);
-                    // Hard cap to prevent security holes
-                    if (threshold > 0.60) threshold = 0.60;
-                }
-                return threshold;
-            }
-
-            checkPose(landmarks) {
-                const nose = landmarks.getNose()[3];
-                const jawL = landmarks.getJawOutline()[0];
-                const jawR = landmarks.getJawOutline()[16];
-                const dL = Math.abs(nose.x - jawL.x);
-                const dR = Math.abs(nose.x - jawR.x);
-                const ratio = Math.min(dL, dR) / (Math.max(dL, dR) + 0.1);
-                // Ratio < 0.2 means profile view (bad angle)
-                return ratio < 0.2; 
-            }
-        }
-
-        /**
-         * ------------------------------------------------------------------
-         * [5] SERVICE: INTERFACE MANAGER (UI)
-         * ------------------------------------------------------------------
-         */
-        class InterfaceManager {
-            constructor() {
-                // Elements
-                this.video = document.getElementById('camera-feed');
-                this.canvas = document.getElementById('hud-overlay');
-                this.ctx = this.canvas.getContext('2d');
-                
-                this.btnScan = document.getElementById('btn-scan-control');
-                this.btnAdd = document.getElementById('btn-add-record');
-                this.btnSave = document.getElementById('btn-save-record');
-                this.btnTheme = document.getElementById('theme-toggle');
-                
-                this.adminPanel = document.getElementById('admin-panel');
-                this.gallery = document.getElementById('db-gallery');
-                
-                // Auth Modal Elements
-                this.authModal = document.getElementById('auth-modal');
-                this.authInput = document.getElementById('auth-code');
-                this.btnAuthConfirm = document.getElementById('btn-auth-confirm');
-                this.btnAuthCancel = document.getElementById('btn-auth-cancel');
-                
-                // Indicators
-                this.confVal = document.getElementById('ui-conf-val');
-                this.confBar = document.getElementById('ui-conf-bar');
-                this.statusText = document.getElementById('ui-status-text');
-                this.alertBanner = document.getElementById('alert-banner');
-                
-                // Profile
-                this.pName = document.getElementById('ui-name');
-                this.pAge = document.getElementById('ui-age');
-                this.pLoc = document.getElementById('ui-loc');
-                this.pImg = document.getElementById('ui-target-img');
-            }
-
-            // --- Theme Handling ---
-            toggleTheme() {
-                const html = document.documentElement;
-                const current = html.getAttribute('data-theme');
-                html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
-            }
-
-            // --- Canvas Drawing ---
-            clearCanvas() {
-                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-            }
-
-            drawBracketBox(x, y, w, h, color, label, info) {
-                const ctx = this.ctx;
-                const lineLen = Math.min(w, h) * 0.2;
-                
-                ctx.strokeStyle = color;
-                ctx.lineWidth = 3;
-                ctx.fillStyle = color;
-
-                // Pulsing Shadow for Match
-                if (color === CONFIG.THEME.COLORS.MATCH) {
-                    ctx.shadowColor = color;
-                    ctx.shadowBlur = 15;
-                } else {
-                    ctx.shadowBlur = 0;
-                }
-
-                // Draw Corners
-                ctx.beginPath();
-                ctx.moveTo(x, y + lineLen); ctx.lineTo(x, y); ctx.lineTo(x + lineLen, y);
-                ctx.moveTo(x + w - lineLen, y); ctx.lineTo(x + w, y); ctx.lineTo(x + w, y + lineLen);
-                ctx.moveTo(x, y + h - lineLen); ctx.lineTo(x, y + h); ctx.lineTo(x + lineLen, y + h);
-                ctx.moveTo(x + w - lineLen, y + h); ctx.lineTo(x + w, y + h); ctx.lineTo(x + w, y + h - lineLen);
-                ctx.stroke();
-
-                // Draw Label Background
-                ctx.shadowBlur = 0;
-                ctx.fillRect(x, y - 24, 120, 24);
-                
-                // Draw Text
-                ctx.fillStyle = "#ffffff";
-                ctx.font = "bold 12px Inter, sans-serif";
-                ctx.fillText(`${label} | ${info}`, x + 6, y - 8);
-
-                // Optional Fill
-                if (color === CONFIG.THEME.COLORS.MATCH || color === CONFIG.THEME.COLORS.SCANNING) {
-                    ctx.globalAlpha = 0.1;
-                    ctx.fillStyle = color;
-                    ctx.fillRect(x, y, w, h);
-                    ctx.globalAlpha = 1.0;
-                }
-            }
-
-            // --- Status Updates ---
-            updateStatus(percent, message, colorCode) {
-                this.confVal.innerText = `${percent.toFixed(0)}%`;
-                this.confBar.style.width = `${percent}%`;
-                this.confBar.style.backgroundColor = colorCode;
-                this.statusText.innerText = message;
-                this.statusText.style.color = colorCode;
-            }
-
-            setButtonState(text, enabled, variant = 'primary') {
-                this.btnScan.innerHTML = text;
-                this.btnScan.disabled = !enabled;
-                this.btnScan.className = 'btn'; // Reset
-                if (variant === 'danger') this.btnScan.classList.add('btn-danger');
-                else this.btnScan.classList.add('btn-primary');
-            }
-
-            updateProfile(rec) {
-                this.pName.innerText = rec.name;
-                this.pAge.innerText = rec.age;
-                this.pLoc.innerText = rec.loc;
-                this.pImg.src = rec.img;
-            }
-
-            resetProfile() {
-                this.pName.innerText = "--";
-                this.pAge.innerText = "--";
-                this.pLoc.innerText = "--";
-                this.pImg.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-                this.updateStatus(0, "SYSTEM IDLE", "var(--text-muted)");
-            }
-
-            toggleAlert(show) {
-                this.alertBanner.style.display = show ? 'block' : 'none';
-            }
-
-            triggerFlash() {
-                const f = document.getElementById('flash-effect');
-                f.classList.add('flash-active');
-                setTimeout(() => f.classList.remove('flash-active'), 200);
-            }
-
-            showSuccess(callback) {
-                const overlay = document.getElementById('success-overlay');
-                const counter = document.getElementById('countdown-val');
-                overlay.style.display = 'flex';
-                
-                let count = 10;
-                counter.innerText = count;
-                
-                const iv = setInterval(() => {
-                    count--;
-                    counter.innerText = count;
-                    if (count <= 0) {
-                        clearInterval(iv);
-                        overlay.style.display = 'none';
-                        if (callback) callback();
-                    }
-                }, 1000);
-            }
-        }
-
-        /**
-         * ------------------------------------------------------------------
-         * [6] CONTROLLER: MAIN APPLICATION
-         * ------------------------------------------------------------------
-         */
-        class SystemController {
-            constructor() {
-                this.logger = new LoggerService();
-                this.db = new DatabaseService(this.logger);
-                this.ai = new BiometricEngine(this.logger);
-                this.ui = new InterfaceManager();
-                
-                // State
-                this.isScanning = false;
-                this.isVerifying = false; // Snapshot in progress
-                this.activeRecord = null;
-                this.matchPersistence = 0; // Counter for "Check 10 times"
-                this.lastSpeech = 0;
-                this.lightCounter = 0;
-            }
-
-            async init() {
-                this.logger.log("System Boot Sequence Initiated...");
-                
-                // Bind UI Events
-                this.ui.btnTheme.onclick = () => this.ui.toggleTheme();
-                this.ui.btnScan.onclick = () => this.toggleScanState();
-                this.ui.btnAdd.onclick = () => this.handleAdminAuth();
-                this.ui.btnSave.onclick = () => this.handleUpload();
-                
-                // Auth Modal Bindings
-                this.ui.btnAuthCancel.onclick = () => this.ui.authModal.style.display = 'none';
-                this.ui.btnAuthConfirm.onclick = () => this.verifyAuth();
-
-                try {
-                    // Initialize Subsystems
-                    await this.db.init();
-                    await this.ai.loadModels();
-                    this.renderGallery();
-
-                    // Camera Setup
-                    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                    this.ui.video.srcObject = stream;
-                    this.ui.video.onplay = () => {
-                        faceapi.matchDimensions(this.ui.canvas, this.ui.video);
-                        this.startProcessingLoop();
-                    };
-
-                    this.ui.setButtonState("SELECT A TARGET FROM DATABASE", false);
-                    this.logger.log("Camera Feed Active. System Ready.", "success");
-
-                } catch (e) {
-                    this.logger.log("Initialization Failed: " + e.message, "error");
-                    this.ui.setButtonState("SYSTEM FAILURE", false, 'danger');
-                }
-            }
-
-            // --- MAIN LOGIC LOOP ---
-            startProcessingLoop() {
-                const loop = async () => {
-                    // 1. Validation Checks
-                    if (this.ui.video.paused || this.ui.video.ended) return setTimeout(loop, 100);
-                    
-                    // Prevent crash if minimized
-                    if (this.ui.video.clientWidth === 0) return requestAnimationFrame(loop);
-
-                    // 2. Throttling (Anti-Lag)
-                    // We execute logic only if not verifying and scanning enabled
-                    if (this.isScanning && !this.isVerifying) {
-                        
-                        this.checkLighting();
-
-                        // AI DETECT
-                        const detections = await this.ai.scanFrame(this.ui.video);
-                        
-                        // RESIZE & CLEAR
-                        const dims = { width: this.ui.video.clientWidth, height: this.ui.video.clientHeight };
-                        
-                        // FIX: Ensure dimensions are valid before resizing to prevent crash
-                        if (dims.width === 0 || dims.height === 0) {
-                            requestAnimationFrame(loop);
-                            return;
-                        }
-
-                        const resized = faceapi.resizeResults(detections, dims);
-                        this.ui.clearCanvas();
-
-                        let bestMatchFound = false;
-
-                        // PROCESS FACES (Max 5)
-                        resized.slice(0, CONFIG.LOGIC.MAX_FACES).forEach(d => {
-                            const { x, y, width, height } = d.detection.box;
-                            
-                            // Default Visuals
-                            let color = CONFIG.THEME.COLORS.SCANNING;
-                            let label = "SCANNING";
-                            let info = d.age ? `${Math.round(d.age)} YRS` : "";
-
-                            // Logic Chain
-                            const badPose = this.ai.checkPose(d.landmarks);
-
-                            if (badPose) {
-                                color = CONFIG.THEME.COLORS.ALERT;
-                                label = "BAD ANGLE";
-                                info = "TURN";
-                            } else if (this.ai.targetDescriptor) {
-                                // DIRECT MATCHING LOGIC (RESTORED FROM V7)
-                                const dist = this.ai.getMatchScore(d.descriptor);
-                                const adaptiveThresh = this.ai.getAdaptiveThreshold(d.age);
-                                const matchPercent = Math.max(0, (1 - dist) * 100).toFixed(0);
-
-                                if (dist < adaptiveThresh) {
-                                    // STRICT MATCH CANDIDATE
-                                    bestMatchFound = true;
-                                    
-                                    // "CHECK 10 TIMES" Logic
-                                    if (this.matchPersistence >= CONFIG.LOGIC.PERSISTENCE_REQUIRED) {
-                                        color = CONFIG.THEME.COLORS.MATCH; // Blue
-                                        label = "CAPTURING...";
-                                        this.triggerSnapshotVerification();
-                                    } else {
-                                        color = CONFIG.THEME.COLORS.VERIFYING; // Gold
-                                        label = `VERIFYING (${this.matchPersistence}/${CONFIG.LOGIC.PERSISTENCE_REQUIRED})`;
-                                        info = `${matchPercent}%`;
-                                    }
-                                } else if (dist < CONFIG.LOGIC.THRESH_POSSIBLE) {
-                                    // POSSIBLE (Yellow)
-                                    color = CONFIG.THEME.COLORS.VERIFYING;
-                                    label = "POSSIBLE";
-                                    info = `${matchPercent}%`;
-                                } else {
-                                    // NO MATCH (Green)
-                                    info = "NO MATCH";
-                                }
-                            }
-
-                            this.ui.drawBracketBox(x, y, width, height, color, label, info);
-                        });
-
-                        // UPDATE PERSISTENCE
-                        if (bestMatchFound) {
-                            this.matchPersistence++;
-                            const confidence = Math.min(100, (this.matchPersistence / CONFIG.LOGIC.PERSISTENCE_REQUIRED) * 100);
-                            this.ui.updateStatus(confidence, "ACQUIRING BIOMETRIC LOCK...", CONFIG.THEME.COLORS.VERIFYING);
-                        } else {
-                            // Decay persistence if target lost
-                            this.matchPersistence = Math.max(0, this.matchPersistence - 2);
-                            this.ui.updateStatus(0, "SCANNING SECTOR...", CONFIG.THEME.COLORS.SCANNING);
-                        }
-
-                    } else if (!this.isScanning) {
-                        this.ui.clearCanvas();
-                    }
-
-                    // Loop Throttle (40ms = ~25 FPS)
-                    setTimeout(() => requestAnimationFrame(loop), CONFIG.LOGIC.LOOP_DELAY_MS);
-                };
-                loop();
-            }
-
-            // --- SNAPSHOT VERIFICATION LOGIC ---
-            async triggerSnapshotVerification() {
-                if (this.isVerifying) return;
-                this.isVerifying = true;
-                
-                this.ui.triggerFlash();
-                this.logger.log("Acquiring High-Res Snapshot for Verification...", "info");
-                this.ui.updateStatus(100, "ANALYZING SNAPSHOT...", CONFIG.THEME.COLORS.MATCH);
-
-                // Capture Frame
-                const snapCanvas = document.createElement('canvas');
-                snapCanvas.width = this.ui.video.videoWidth;
-                snapCanvas.height = this.ui.video.videoHeight;
-                snapCanvas.getContext('2d').drawImage(this.ui.video, 0, 0);
-
-                // Analyze Frame (Double Check)
-                try {
-                    const snapResults = await this.ai.scanFrame(snapCanvas);
-                    let verified = false;
-
-                    for (const snapDet of snapResults) {
-                        const dist = this.ai.getMatchScore(snapDet.descriptor);
-                        const strictThresh = this.ai.getAdaptiveThreshold(snapDet.age);
-                        
-                        if (dist < strictThresh) {
-                            verified = true;
-                            break;
-                        }
-                    }
-
-                    if (verified) {
-                        this.handleConfirmedMatch(snapCanvas);
-                    } else {
-                        this.logger.log("Snapshot Verification Failed. Resuming Scan.", "error");
-                        this.matchPersistence = 0; // Reset
-                        this.isVerifying = false; // Release lock
-                    }
-                } catch (e) {
-                    this.isVerifying = false;
-                }
-            }
-
-            handleConfirmedMatch(snapCanvas) {
-                this.isScanning = false; // Stop scanning loop
-                this.ui.updateStatus(100, "POSITIVE ID CONFIRMED", CONFIG.THEME.COLORS.MATCH);
-                this.logger.log(`TARGET IDENTIFIED: ${this.activeRecord.name}`, "success");
-                
-                this.speak("Target Identified. Archiving record.");
-
-                // Auto Download Evidence
-                if (snapCanvas) {
-                    try {
-                        const link = document.createElement('a');
-                        link.download = `MATCH_${this.activeRecord.name}_${Date.now()}.png`;
-                        link.href = snapCanvas.toDataURL('image/png');
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                        this.logger.log("Evidence photo downloaded.", "success");
-                    } catch (e) {
-                        this.logger.log("Failed to download evidence.", "error");
-                    }
-                }
-
-                // Show Overlay & Countdown
-                this.ui.showSuccess(async () => {
-                    // Action after countdown
-                    if (this.activeRecord) {
-                        await this.db.deleteRecord(this.activeRecord.id);
-                        this.renderGallery();
-                        this.resetSystem();
-                        alert("Case Closed: Record has been archived/deleted.");
-                    }
-                    this.isVerifying = false;
-                });
-            }
-
-            // --- UTILITIES ---
-            checkLighting() {
-                if (this.lightCounter++ < 30) return;
-                this.lightCounter = 0;
-                try {
-                    const p = this.ui.ctx.getImageData(this.ui.canvas.width/2, this.ui.canvas.height/2, 1, 1).data;
-                    const b = (p[0] + p[1] + p[2]) / 3;
-                    this.ui.toggleAlert(b < 20 && b > 0);
-                } catch(e) {}
-            }
-
-            speak(text) {
-                const now = Date.now();
-                if (now - this.lastSpeech > CONFIG.LOGIC.AUDIO_DEBOUNCE_MS && 'speechSynthesis' in window) {
-                    const u = new SpeechSynthesisUtterance(text);
-                    u.rate = 1.1;
-                    window.speechSynthesis.speak(u);
-                    this.lastSpeech = now;
-                }
-            }
-
-            // --- STATE MANAGEMENT ---
-            toggleScanState() {
-                this.isScanning = !this.isScanning;
-                if (this.isScanning) {
-                    this.ui.setButtonState("TERMINATE SCAN PROTOCOL", true, 'danger');
-                    document.getElementById('scan-line').classList.add('scan-active');
-                    this.logger.log("Scan Protocol Initiated.");
-                } else {
-                    this.ui.setButtonState("INITIATE SCAN PROTOCOL", true, 'primary');
-                    document.getElementById('scan-line').classList.remove('scan-active');
-                    this.ui.updateStatus(0, "SYSTEM IDLE", "var(--text-muted)");
-                    this.matchPersistence = 0;
-                    this.logger.log("Scan Protocol Paused.");
-                }
-            }
-
-            resetSystem() {
-                this.activeRecord = null;
-                this.isScanning = false;
-                this.isVerifying = false;
-                this.matchPersistence = 0;
-                this.ui.resetProfile();
-                this.ui.setButtonState("SELECT A TARGET", false);
-                document.getElementById('scan-line').classList.remove('scan-active');
-            }
-
-            // --- DATABASE / ADMIN INTERACTION ---
-            async renderGallery() {
-                const records = await this.db.getAllRecords();
-                this.ui.gallery.innerHTML = "";
-                
-                records.reverse().forEach(r => {
-                    const div = document.createElement('div');
-                    div.className = 'gallery-item';
-                    div.innerHTML = `<img src="${r.img}">`;
-                    div.onclick = () => this.loadRecord(r);
-                    this.ui.gallery.appendChild(div);
-                });
-            }
-
-            loadRecord(r) {
-                this.activeRecord = r;
-                this.ui.updateProfile(r);
-                this.ui.setButtonState("VECTORIZING...", false);
-                this.logger.log(`Loading Record: ${r.name}`);
-
-                const img = new Image();
-                img.src = r.img;
-                img.onload = async () => {
-                    const success = await this.ai.setTarget(img, r.name, r.age);
-                    if (success) {
-                        this.ui.setButtonState("INITIATE SCAN PROTOCOL", true, 'primary');
-                    } else {
-                        this.ui.setButtonState("INVALID IMAGE DATA", false, 'danger');
-                    }
-                };
-            }
-
-            handleAdminAuth() {
-                const panel = this.ui.adminPanel;
-                if (panel.style.display === 'block') {
-                    panel.style.display = 'none';
-                } else {
-                    // Open Custom Modal
-                    this.ui.authModal.style.display = 'flex';
-                    this.ui.authInput.value = "";
-                    this.ui.authInput.focus();
-                }
-            }
-
-            verifyAuth() {
-                const code = this.ui.authInput.value;
-                if (code === "100") {
-                    this.ui.authModal.style.display = 'none';
-                    this.ui.adminPanel.style.display = 'block';
-                    this.logger.log("Admin Access Granted.", "success");
-                } else {
-                    this.ui.authInput.value = "";
-                    this.ui.authInput.placeholder = "INVALID CODE";
-                    this.logger.log("Access Denied: Invalid Credentials", "error");
-                }
-            }
-
-            async handleUpload() {
-                const name = document.getElementById('in-name').value;
-                const age = document.getElementById('in-age').value;
-                const loc = document.getElementById('in-loc').value;
-                const f = document.getElementById('in-file').files[0];
-
-                if (!name || !f) {
-                    this.logger.log("Upload Failed: Missing Name or Photo.", "error");
-                    return; 
-                }
-
-                const r = new FileReader();
-                r.onload = async (e) => {
-                    await this.db.addRecord({ 
-                        name, 
-                        age: age || "Unknown", 
-                        loc: loc || "Unknown", 
-                        img: e.target.result 
-                    });
-                    this.renderGallery();
-                    this.ui.adminPanel.style.display = 'none';
-                    // Reset Inputs
-                    document.getElementById('in-name').value = "";
-                    document.getElementById('in-file').value = "";
-                };
-                r.readAsDataURL(f);
-            }
-        }
-
-        // --- BOOTSTRAP ---
-        const App = new SystemController();
-        window.onload = () => App.init();
-
-    </script>
 </body>
+
 </html>
