@@ -1,5 +1,7 @@
 # 🛡️ Biometric Access Control System (V9.2)
 
+> ### 🚀 [View Live Demo](https://identity-verification-system.netlify.app/)
+
 An enterprise-ready, browser-based facial authentication and identity management system.
 
 ## 🎯 The Purpose
