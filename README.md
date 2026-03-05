@@ -41,7 +41,7 @@ You need a modern web browser and a webcam.
 6. *Admin Access Code:* The default passcode for adding new records into the database is **100**.
 
 ## 📸 Demo
-*(Add screenshots or GIFs demonstrating the facial recognition interface, database addition, and matching process)*
+![Face Recognition Interface](face_recognition_ui.png)
 
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
