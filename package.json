@@ -1,0 +1,26 @@
+{
+  "name": "face-recognition-biometric-system",
+  "version": "9.2.0",
+  "description": "Enterprise-ready, client-side biometric access control system using face-api.js.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "jest --testPathPattern=tests/"
+  },
+  "keywords": [
+    "biometric",
+    "security",
+    "face-api",
+    "tensorflow",
+    "modular",
+    "esm"
+  ],
+  "author": "Aman Amarjit",
+  "license": "MIT",
+  "dependencies": {
+    "face-api.js": "^0.22.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
