@@ -57,6 +57,17 @@ npm install       # Installs jest for testing
 npm start         # Starts local server on port 8000
 ```
 
+## 🚀 Deployment
+
+**Netlify (Recommended):**
+1. Push your repository to GitHub.
+2. Go to [Netlify](https://app.netlify.com/) and "Add new site" → "Import an existing project".
+3. Select this repository. Set the build command to empty and the publish directory to `./`.
+4. Your biometric system is now live!
+
+**GitHub Pages:**
+Deploy directly from your `main` or `master` branch via settings.
+
 ## 🧪 Running Tests
 
 ```bash
