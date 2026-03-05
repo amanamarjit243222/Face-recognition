@@ -1,50 +1,29 @@
-# 👁️ Identity Verification System V9.2
+# 🛡️ Biometric Access Control System (V9.2)
 
-An enterprise-grade, browser-based biometric facial recognition system. This application uses your webcam and advanced Machine Learning models to detect faces, analyze features, and match them against a local "criminal database" in real-time.
+An enterprise-ready, browser-based facial authentication and identity management system.
 
-## ✨ Features
-- **Real-Time Facial Recognition:** Powered by `face-api.js`, providing fast and accurate face detection directly in the browser.
-- **Biometric Confidence Meter:** Displays real-time matching confidence scores.
-- **Dynamic UI:** A highly polished, sci-fi "Enterprise" interface with Dark/Light theme toggles, scan lines, and alert overlays.
-- **Local Database Management:** Add new target profiles (image, name, age, location) directly through the Admin Panel (Password secured).
-- **Audio Feedback:** Synthesized voice alerts for system status and match confirmations.
+## 🎯 The Purpose
+In an era of increasing security needs, this project demonstrates a **privacy-first biometric solution**. By performing all facial recognition tasks directly on the client-side using `face-api.js`, sensitive biometric data never has to leave the user's device. This is a blueprint for secure, distributed identity verification.
+
+## ✨ Core Features
+- **Client-Side Authentication**: Real-time biometric matching without server-side image processing.
+- **Authorized Database Management**: Secure Admin Panel for managing personnel records.
+- **Biometric Confidence Meter**: High-precision scoring for identity verification.
+- **Synthesized System Feedback**: Voice-guided status updates for a premium "Enterprise" feel.
 
 ## 🛠️ Tech Stack
-- **Frontend:** HTML5, CSS3 (Custom Variables for Theming), Vanilla JavaScript
-- **Machine Learning:** [face-api.js](https://justadudewhohacks.github.io/face-api.js/docs/index.html) running in the client browser.
+- **Engine**: [face-api.js](https://justadudewhohacks.github.io/face-api.js/) (TensorFlow.js based)
+- **UI/UX**: Custom CSS Variable System (Themed)
+- **Logic**: Vanilla ES6 JavaScript
 
-## 🚀 Getting Started
+## 🚀 Quick Start
+1. Clone & Navigate: `cd Face-recognition`
+2. Serve locally: `python -m http.server 8000`
+3. Access: `http://localhost:8000`
+4. *Admin Access Code:* 100
 
-### Prerequisites
-You need a modern web browser and a webcam.
-
-### Installation & Usage
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/amanamarjit243222/Face-recognition.git
-   ```
-2. Navigate to the directory:
-   ```bash
-   cd Face-recognition
-   ```
-3. Run a local server (required for loading the TFJS models via fetching):
-   ```bash
-   # Using Node.js
-   npx serve ./
-   
-   # Using Python
-   python -m http.server 8000
-   ```
-4. Open your browser to `http://localhost:8000`.
-5. Allow webcam access when prompted.
-6. *Admin Access Code:* The default passcode for adding new records into the database is **100**.
-
-## 📸 Demo
-![Face Recognition Interface](face_recognition_ui.png)
-
-## 🤝 Contributing
-Contributions, issues, and feature requests are welcome!
+## 📸 Interface Preview
+![Access Control Interface](face_recognition_ui.png)
 
 ## 📄 License
-This project is open-source.
+Open-source / Personal Portfolio Project.
